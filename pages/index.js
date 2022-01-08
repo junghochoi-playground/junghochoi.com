@@ -10,6 +10,12 @@ import {
   Center,
 } from '@chakra-ui/react';
 import Paragraph from '../components/Paragraph';
+import HR from '../components/minor/HR';
+import IconDisplay from '../components/IconDisplay';
+
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai'
+import {MdLibraryBooks} from 'react-icons/md'
 export default function Index() {
   return (
     <Container maxW={'container.md'}>
@@ -45,18 +51,19 @@ export default function Index() {
         // center
         // width='fit-content'
       >
-        <Flex fontSize={{ base: 'md', sm: 'xl' }} justifyContent="space-around">
+        <Flex fontSize={{ base: 'md', sm: 'xl' }} wrap='wrap' justifyContent="space-around">
           <Text>🏫 Student</Text>
           <Text>💻 Developer</Text>
           <Text>Photoshop Artist</Text>
         </Flex>
       </Box>
 
-      <Box>
-        <Heading as="h1" fontSize={{ base: 'xl' }} textAlign="center">
+      <Box mb={3}>
+        <Heading as="h1" mb ={1} fontSize={{ base: 'xl' }}>
           About Me
         </Heading>
-        <Paragraph>
+        <HR />
+        <Paragraph >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -68,9 +75,29 @@ export default function Index() {
       </Box>
 
       <Box>
-        <Heading as="h1" fontSize={{ base: 'xl' }} textAlign="center">
-          Contact
+        <Heading as="h1" fontSize={{ base: 'xl' }}>
+          Where to Find Me
         </Heading>
+        <HR />
+        <Flex direction='row' wrap='wrap' justify='space-around' m={3}>
+          <IconDisplay text ={'resume'}>
+            <MdLibraryBooks size='4em'/>
+          </IconDisplay>
+          <IconDisplay text={'Github'}>
+            <FaGithub size='4em'/>
+          </IconDisplay>
+
+          <IconDisplay text={'LinkedIn'}>
+            <FaLinkedin size='4em' />
+          </IconDisplay>
+          <IconDisplay text={'email'}>
+            <AiOutlineMail size='4em'/>
+          </IconDisplay>
+
+          <IconDisplay text={'phone'}>
+            <AiOutlinePhone size='4em'/>
+          </ IconDisplay >
+        </Flex>
       </Box>
     </Container>
   );
