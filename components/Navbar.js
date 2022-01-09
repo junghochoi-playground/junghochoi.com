@@ -13,10 +13,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import ThemeToggleButton from './ThemeToggleButton'
+import ThemeToggleButton from './ThemeToggleButton';
 import { HamburgerIcon } from '@chakra-ui/icons';
-
-
 
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
@@ -62,7 +60,7 @@ const Navbar = (props) => {
       >
         <Flex align='center' mr={5}>
           <Heading as='h1' size='lg' letterSpacing={'tighter'}>
-            Jungho Daniel Choi
+            <NextLink href='/'>Jungho Daniel Choi</NextLink>
           </Heading>
         </Flex>
 
@@ -74,23 +72,16 @@ const Navbar = (props) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href='/works' path={path}>
-            Works
+          <LinkItem href='/projects' path={path}>
+            Projects
           </LinkItem>
-          <LinkItem href='/posts' path={path}>
-            Posts
+          <LinkItem href='/employment' path={path}>
+            Employment
           </LinkItem>
-          <LinkItem
-            _target='_blank'
-            href='https://github.com/craftzdog/craftzdog-homepage'
-            path={path}
-            display='inline-flex'
-            alignItems='center'
-            style={{ gap: 4 }}
-            pl={2}
-          >
-            Source
+          <LinkItem href='/hobbies' path={path}>
+            Hobbies
           </LinkItem>
+
         </Stack>
         <Box flex={1} align='right'>
           <ThemeToggleButton />
@@ -107,18 +98,15 @@ const Navbar = (props) => {
                 <NextLink href='/' passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href='/works' passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
+                <NextLink href='/projects' passHref>
+                  <MenuItem as={Link}>Projects</MenuItem>
                 </NextLink>
-                <NextLink href='/posts' passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+                <NextLink href='/employment' passHref>
+                  <MenuItem as={Link}>Employment</MenuItem>
                 </NextLink>
-                <MenuItem
-                  as={Link}
-                  href='https://github.com/craftzdog/craftzdog-homepage'
-                >
-                  View Source
-                </MenuItem>
+                <NextLink href='/hobbies' passHref>
+                  <MenuItem as={Link}>Hobbies</MenuItem>
+                </NextLink>
               </MenuList>
             </Menu>
           </Box>
